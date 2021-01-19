@@ -1,0 +1,89 @@
+PROCEDURE dot_product (v1,v2:array)
+VAR
+    v1,v2 : ARRAY_OF INTIGER[5];
+    i,j: INTIGER
+    ps: INTIGER:=0;
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        FOR j FROM 0 TO v2.length-1 STEP 1  DO
+              ps:= ps + v1[i] * v2[j]
+        END_FOR
+    END_FOR
+END
+
+ALGORITHM algo
+VAR
+    v1,v1 : ARRAY_OF INTIGER [5]
+    i,j: INTIGER
+    a,b:INTIGER
+BEGIN
+    REPEAT
+        write("a")
+        read(a)
+    UNTIL (a>0)
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        v1[i]=a
+    END_FOR
+    REPEAT
+        write("b")
+        read(b)
+    UNTIL (b>0)
+    FOR i FROM 0 TO v2.length-1 STEP 1  DO
+        v1[i]=b
+    END_FOR
+
+    dot_product(v1[i],v2[j])
+    IF (ps=0) THEN
+        write("v1 and v2 orth")
+        ELSE
+        write("v1 and v2 not orth")
+        END_IF
+    END_IF
+END
+
+/*****************************/
+
+FUNCTION dot_product(v1,v2:array) : INTEGER
+VAR
+    v1,v2 : ARRAY_OF INTEGER[5];
+    i,j:INTEGER
+    c:INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        FOR j FROM 0 TO v2.length-1 STEP 1  DO
+            c=c+v1[i]*v2[j]
+        END_FOR
+    END_FOR
+    RETURN c ;
+END
+
+ALGORITHM func
+VAR
+    v1,v2 : ARRAY_OF INTEGER[5];
+    i,j :INTEGER
+    a,b:INTEGER:=0;
+    d:INTEGER
+BEGIN
+    REPEAT
+        write("a")
+        read(a)
+    UNTIL (a>0)
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        v1[i]=a
+    END_FOR
+    REPEAT
+        write("b")
+        read(b)
+    UNTIL (b>0)
+    FOR i FROM 0 TO v2.length-1 STEP 1  DO
+        v1[i]=b
+    END_FOR
+
+    d:=dot_product(v1[i]*v2[j])
+    read(d)
+    IF (d=0) THEN
+        write("v1 and v2 orth")
+    ELSE
+        write("v1 and v2 not orth")
+    END_IF
+END
